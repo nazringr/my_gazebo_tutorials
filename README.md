@@ -61,7 +61,7 @@ The publisher will publish messages to the topic, and the subscriber will listen
 
 ```bash
 #1. In Terminal 1, Launch Gazebo world 
-ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py y_pose:=0.0
+ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py x_pose:=-2.0 y_pose:=1.0 z_pose:=0.0
 
 #2. In Terminal 2, Run Launch file
 ros2 launch walker launch.py record_bag:=True stop:=True
@@ -73,5 +73,18 @@ To run cpplint on the source files:
     `cpplint src/walker/src/*.cpp > cpplint_output.txt`
 
 To run clang-tidy on the source files:
-    `clang-tidy -p build/walker --extra-arg=-std=c++17 src/walker/src/walker.cpp src/walker/include/walker.hpp`
+    `clang-tidy -p build/walker --extra-arg=-std=c++17 src/walker/src/walker.cpp > src/walker/results/clang-tidy.txt`
 ```
+
+## Results
+
+Here is the walker robot in action inside the Gazebo simulation. The robot moves in the environment, collects sensor data, and performs control.
+
+![Walker Robot in Action](src/walker/results/bag_play.gif)
+
+This GIF demonstrates the robot's movement in the Gazebo simulation and its behavior as defined by the **State Design Pattern** in the walker node.
+
+## License
+
+This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
+
