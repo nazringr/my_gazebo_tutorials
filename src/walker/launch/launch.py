@@ -26,12 +26,10 @@ def generate_launch_description():
         package='walker',         
         executable='walker_node', 
         name='walker',            
-        output='screen',          
-        description="Node responsible for controlling the walker robot's movement and behavior."
+        output='screen'           
     )
 
     # Define a process to record a rosbag if the 'record_bag' argument is set to True
-    # Exclude topics related to '/camera/*' to reduce the size of the bag file
     recorder_node = ExecuteProcess(
         condition=IfCondition(LaunchConfiguration("record_bag")),  
         cmd=[
@@ -41,16 +39,14 @@ def generate_launch_description():
             # Start recording all topics except those starting with '/camera/*'
             "ros2 bag record -o results/bag_list/ --all -x '/camera/*'"
         ],
-        output="screen", 
-        description="Node to record ROS topics in a rosbag, excluding camera-related topics."
+        output="screen"
     )
 
     # Create a timer action to automatically stop the launch after 30 seconds if 'stop' argument is True
     stop_action = TimerAction(
         period=30.0,  # Duration (in seconds) before shutting down the launch
         actions=[Shutdown()],  
-        condition=IfCondition(LaunchConfiguration("stop")),  # Run only if 'stop' is True
-        description="Action to stop the launch after 30 seconds."
+        condition=IfCondition(LaunchConfiguration("stop"))  # Run only if 'stop' is True
     )
 
     # Return a LaunchDescription object that includes all the declared arguments, nodes, and actions
