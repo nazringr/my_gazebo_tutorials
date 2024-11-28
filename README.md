@@ -86,6 +86,7 @@ Terminal output: (behavior is defined by the **State Design Pattern** in the wal
 
 ![Terninal Output](src/walker/results/terminalOutput.png)
 
+
 ## License
 
 This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
