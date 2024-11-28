@@ -84,8 +84,8 @@ Here is the walker robot in action inside the Gazebo simulation. The robot moves
 
 Terminal output: (behavior is defined by the **State Design Pattern** in the walker node)
 
-![Terninal Output](src/walker/results/terminalOutput.png)
 
+![Terninal Output](src/walker/results/terminal.png)
 
 ## License
 
