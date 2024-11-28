@@ -82,7 +82,9 @@ Here is the walker robot in action inside the Gazebo simulation. The robot moves
 
 ![Walker Robot in Action](src/walker/results/bag_play.gif)
 
-This GIF demonstrates the robot's movement in the Gazebo simulation and its behavior as defined by the **State Design Pattern** in the walker node.
+Terminal output: (behavior is defined by the **State Design Pattern** in the walker node)
+
+![Terninal Output](src/walker/results/terminalOutput.png)
 
 ## License
 
