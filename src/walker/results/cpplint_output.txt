@@ -1,0 +1,2 @@
+Done processing src/walker/src/walker.cpp
+Total errors found: 6
