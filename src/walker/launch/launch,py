@@ -1,0 +1,25 @@
+import launch
+from launch import LaunchDescription
+from launch_ros.actions import Node
+import os
+
+def generate_launch_description():
+    return LaunchDescription([
+        # Launch Gazebo with TurtleBot3
+        Node(
+            package='turtlebot3_gazebo',
+            executable='turtlebot3_world.launch.py',
+            name='gazebo',
+            output='screen',
+            parameters=[{'y_pose': 0.0}],
+        ),
+
+        # Launch your custom walker node
+        Node(
+            package='walker',
+            executable='walker_node',
+            name='walker_node',
+            output='screen',
+            parameters=[{'use_sim_time': True}]
+        ),
+    ])
