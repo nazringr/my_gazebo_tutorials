@@ -57,8 +57,6 @@ source install/setup.bash
 
 ## Run Steps
 
-The publisher will publish messages to the topic, and the subscriber will listen and display those messages.
-
 ```bash
 #1. In Terminal 1, Launch Gazebo world 
 ros2 launch turtlebot3_gazebo turtlebot3_house.launch.py x_pose:=-2.0 y_pose:=1.0 z_pose:=0.0
@@ -70,7 +68,7 @@ ros2 launch walker launch.py record_bag:=True stop:=True
 ## Linting and Code Quality
 ```bash
 To run cpplint on the source files:
-    `cpplint src/walker/src/*.cpp > cpplint_output.txt`
+    `cpplint src/walker/src/*.cpp > src/walker/results/cpplint_output.txt`
 
 To run clang-tidy on the source files:
     `clang-tidy -p build/walker --extra-arg=-std=c++17 src/walker/src/walker.cpp > src/walker/results/clang-tidy.txt`
